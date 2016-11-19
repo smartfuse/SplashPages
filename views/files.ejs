@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <style>
+            body {
+                padding: 60px;
+                background: #3A4F5E;
+                color: #FFFFFF;
+                font-family: "Oswald", sans-serif;
+            }
+
+            a {
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+
+            .list-item:hover {
+                opacity: 0.6;
+            }
+
+            .list-item {
+                cursor: pointer;
+                font-size: 32px;
+                padding-bottom: 2px;
+                border-bottom: 1px solid #FFFFFF;
+                display: inline-block;
+                margin-bottom: 40px;
+                font-weight: 700;
+            }
+
+            .list-title {
+                margin-bottom: 20px;
+            }
+        </style>
+        <title>Splash Fall 2016 Pages</title>
+    </head>
+    <body>
+        <div class="list-title">
+            Splash Websites
+        </div>
+        <div class="list-container">
+            <% data.forEach(function(file) { %>
+                <div>
+                    <a href="<%= file.fileUrl %>">
+                        <div class="list-item">
+                            <%= file.name %>
+                        </div>
+                    </a>
+                </div>
+            <% }) %>
+            <div>
+                <div id="easter-egg" onclick="this.clicked = !this.clicked; this.innerHTML = this.clicked ? 'Wrote this listing page.' : 'Lucas Yan'" class="list-item">
+                    Lucas Yan
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
